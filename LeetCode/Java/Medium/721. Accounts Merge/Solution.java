@@ -10,17 +10,21 @@ class Solution {
                 parent.add(i);
             }}
         
-        public void Union(int x,int y){
-            if(rank.get(Find(y))<rank.get(Find(x))){
-              parent.set(Find(y),parent.get(Find(x)));
-             }
-             else{
-                
-                parent.set(Find(x),parent.get(Find(y)));
-                if(rank.get(Find(x))==rank.get(Find(y)))
-                rank.set(Find(y),rank.get(Find(y))+1);
-           }
-        }
+        public void Union(int x, int y) {
+    int px = Find(x);
+    int py = Find(y);
+
+    if (px == py) return;
+
+    if (rank.get(px) < rank.get(py)) {
+        parent.set(px, py);
+    } else if (rank.get(px) > rank.get(py)) {
+        parent.set(py, px);
+    } else {
+        parent.set(py, px);
+        rank.set(px, rank.get(px) + 1);
+    }
+}
          public int Find(int y){
            if(parent.get(y)==y) return y;
            else{
@@ -37,7 +41,7 @@ class Solution {
         for(int i=0;i<accounts.size();i++){
             for(int j=1;j<accounts.get(i).size();j++){
                 if(hm.containsKey(accounts.get(i).get(j))){
-                    dsu.Union(i,hm.get(accounts.get(i).get(j)));
+                    dsu.Union(hm.get(accounts.get(i).get(j)),i);
                 }
                 else{
                     hm.put(accounts.get(i).get(j),i);
@@ -52,7 +56,7 @@ class Solution {
             t.addAll(accounts.get(i).subList(1,accounts.get(i).size()));
            
             }
-            else if({
+            else if(dsu.Find(i)!=i){
                 temp.get(dsu.Find(i)).addAll(accounts.get(i).subList(1,accounts.get(i).size()));
                
             }
