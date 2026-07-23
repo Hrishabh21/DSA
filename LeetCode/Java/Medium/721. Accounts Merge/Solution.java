@@ -50,18 +50,21 @@ class Solution {
         }
         ArrayList<TreeSet<String>> temp=new ArrayList<>();
         //int j =0;
+        for (int i = 0; i < accounts.size(); i++)
+    temp.add(new TreeSet<>());
          for(int i=0;i<accounts.size();i++){
-            TreeSet<String> t = new TreeSet<>();
-            if(dsu.Find(i)==i){
-            t.addAll(accounts.get(i).subList(1,accounts.get(i).size()));
            
-            }
-            else if(dsu.Find(i)!=i){
-                temp.get(dsu.Find(i)).addAll(accounts.get(i).subList(1,accounts.get(i).size()));
+            // if(dsu.Find(i)==i){
+            // t.addAll(accounts.get(i).subList(1,accounts.get(i).size()));
+           
+            // }
+            // else if(dsu.Find(i)!=i){
+            //     temp.get(dsu.Find(i)).addAll(accounts.get(i).subList(1,accounts.get(i).size()));
                
-            }
-             temp.add(t);
-
+            // }
+             int p = dsu.Find(i);
+    temp.get(p).addAll(accounts.get(i).subList(1, accounts.get(i).size()));
+           
             
          }
 
