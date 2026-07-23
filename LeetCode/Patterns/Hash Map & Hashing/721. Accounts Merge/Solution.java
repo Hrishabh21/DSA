@@ -52,7 +52,7 @@ class Solution {
             t.addAll(accounts.get(i).subList(1,accounts.get(i).size()));
            
             }
-            else{
+            else if({
                 temp.get(dsu.Find(i)).addAll(accounts.get(i).subList(1,accounts.get(i).size()));
                
             }
