@@ -87,9 +87,10 @@ class Solution {
                                 ans = Math.max(dsu.size[dsu.findParent(nd)]+dsu.size[dsu.findParent(and)]+1,ans);
 
                             }
+                            
+                            }
                             else{
                                 ans = Math.max(dsu.size[dsu.findParent(nd)]+1,ans);
-                            }
                             }
                         }
 
