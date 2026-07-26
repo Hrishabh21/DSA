@@ -68,8 +68,8 @@ class Solution {
 
             for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
-                int[] dr ={0,1,-1,0};
-                int[] dc = {-1,0,0,1};
+                int[] dr ={1,1,-1,0};
+                int[] dc = {0,1,0,-1};
                 if(grid[i][j] == 0){
                     boolean f = false;
                  for(int k=0;k<4;k++){
