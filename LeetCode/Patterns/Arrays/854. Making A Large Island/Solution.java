@@ -65,11 +65,13 @@ class Solution {
 
                 }
                 else{
+                    boolean f = false;
                  for(int k=0;k<4;k++){
                     int adr =i+dr[k];
                     int adc  = j+dc[k];
                     int nd = adr*n+adc;
                     if(isValid(adr,adc,n,n)&&grid[adr][adc]==1){
+                        f=true;
                         for(int l =k+1;l<4;l++){
                             int aadc = j+dr[l];
                             int aadr = i+dc[l];
@@ -86,7 +88,10 @@ class Solution {
                         }
 
             }           
-        }}}}
+        }
+        if(!f) ans = Math.max(ans,1);
+        }
+        }}
         return ans;
 
     }
