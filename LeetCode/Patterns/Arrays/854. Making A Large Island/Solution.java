@@ -79,8 +79,8 @@ class Solution {
                     if(isValid(adr,adc,n,n)&&grid[adr][adc]==1){
                         f=true;
                         for(int l =k+1;l<4;l++){
-                            int aadc = j+dr[l];
-                            int aadr = i+dc[l];
+                            int aadr = j+dr[l];
+                            int aadc = i+dc[l];
                             int and = aadr*n+aadc;
                             if(isValid(aadr,aadc,n,n)&&grid[aadr][aadc]==1){
                                  if(dsu.findParent(nd)!= dsu.findParent(and)){
