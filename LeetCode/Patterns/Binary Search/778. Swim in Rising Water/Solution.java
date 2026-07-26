@@ -19,7 +19,7 @@ class Solution {
         for(int[] v: vis) Arrays.fill(v,0);
        //Arrays.fill(vis,0);
        int res = 0;
-       pq.add(new Pair(0,0,0));
+       pq.add(new Pair(0,0,gri));
        vis[0][0] = 1;
        while(!pq.isEmpty()){
            
