@@ -14,16 +14,16 @@ class Solution {
             if(ad==pr) continue;
             if(vis[ad]!=1){
                 dfs(ad,nd);
-                low[nd] = Math.min(low[nd],low[ad]);
+               // low[nd] = Math.min(low[nd],low[ad]);
                 if(low[ad]>tin[nd]){
                     res.add(Arrays.asList(ad,nd));
                 }
             }
-            else{
+           // else{
                  low[nd] = Math.min(low[nd],low[ad]);
 
                
-            }
+           // }
         }
     }
 
