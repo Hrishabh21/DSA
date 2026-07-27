@@ -8,8 +8,8 @@
 Depth-First Search, Graph Theory, Biconnected Component
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 78 ms
+- **Memory:** 197.6 MB
 
 ---
 
