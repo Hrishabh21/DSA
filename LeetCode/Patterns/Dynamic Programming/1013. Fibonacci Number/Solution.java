@@ -1,12 +1,14 @@
 class Solution {
     public int fib(int n) {
-         if(n<2) return n;
-        int[] dp = new int[n+1];
-        Arrays.fill(dp,-1);
-        dp[0] = 0;
-        dp[1] = 1;
-        if(dp[n]!=-1) return dp[n];
-        return dp[n] = fib(n-1)+fib(n-2);
+        if(n<2) return n;
+        int p1 = 0;
+        int p2 = 1;
+        for(int i=2;i<n+1;i++){
+            int t = p2;
+            p2 = p2+p1;
+            p1 = t;
+        }
+        return p2;
        
     }
 }
