@@ -5,7 +5,7 @@ class Solution {
         int n = obstacleGrid[0].length;
         int dp[] = new int[n];
         dp[0] =1;
-        if()
+        if(obstacleGrid[0][0] == 1) return 1;
     
     //Arrays.fill(dp,1);
 
