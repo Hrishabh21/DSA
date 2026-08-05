@@ -1,10 +1,11 @@
 class Solution {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        
+
         int m = obstacleGrid.length;
         int n = obstacleGrid[0].length;
         int dp[] = new int[n];
         dp[0] =1;
+        if()
     
     //Arrays.fill(dp,1);
 
