@@ -22,7 +22,7 @@ class Solution {
     public int cherryPickup(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
-       // int[][][] dp = new int[m][n][n];
+       int[][][] dp = new int[m][n][n];
       return rec(0,0,n-1,m,n,grid);
         
 
