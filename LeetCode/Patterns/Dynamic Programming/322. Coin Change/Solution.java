@@ -1,11 +1,12 @@
 class Solution {
     public int solve(int i,int t,int[] coins){
+       // if(t==0) return 0;
         if(i==0){
             if(t%coins[i]==0)return t/coins[i];
             else return Integer.MAX_VALUE-1;
         }
         int tk=Integer.MAX_VALUE-1;
-        if(t>coins[i])
+        if(t>=coins[i])
         tk = 1+solve(i,t-coins[i],coins);
         int nt = solve(i-1,t,coins);
         return Math.min(tk,nt);
