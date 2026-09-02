@@ -1,7 +1,7 @@
 class Solution {
     public int help(String s,String t,int i,int j,int[][]dp2){
 
-          if(j==0)return 1;
+          if(j==0)return dp[1;
           if(i==0) return 0;
         //  if(i==1&&j==1)return dp2[i][j] =1;
           if(dp2[i][j]!=0) return dp2[i][j];;
