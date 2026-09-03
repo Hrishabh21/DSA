@@ -8,7 +8,7 @@ class Solution {
         if(w1.charAt(i)==w2.charAt(j)){
             return help(i-1,j-1,w1,w2);
         }
-        return Math.min(help(i-1,j,w1,w2), Math.min(help(i-1,j,w1,w2),help(i-1,j-1,w1,w2)))+1;
+        return Math.min(help(i,j-1,w1,w2), Math.min(help(i-1,j,w1,w2),help(i-1,j-1,w1,w2)))+1;
 
     }
     public int minDistance(String word1, String word2) {
