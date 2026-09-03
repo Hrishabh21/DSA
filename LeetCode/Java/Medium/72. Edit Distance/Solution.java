@@ -26,18 +26,29 @@ class Solution {
          for(int i = 1;i<=n;i++){
             dp[i][0] = i;
         }
-
+        int[] dp1 = new int[m+1];
+         for(int j = 0;j<=m;j++){
+            dp1[j] = j;
+        }
+        int[] dp2 = new int[m+1];
+      //  Arrays.fill(dp2,0);
+ 
         for(int i = 1;i<=n;i++){
+            dp2[0] = i;
             for(int j = 1;j<=m;j++){
                 if(word1.charAt(i-1)==word2.charAt(j-1)){
-                    dp[i][j] = dp[i-1][j-1];
+                  //  dp[i][j] = dp[i-1][j-1];
+                  dp2[j] = dp1[j-1];
                      }
                 else{
-                        dp[i][j]= Math.min(dp[i][j-1], Math.min(dp[i-1][j],dp[i-1][j-1]))+1;}
+               // dp[i][j]= Math.min(dp[i][j-1], Math.min(dp[i-1][j],dp[i-1][j-1]))+1;
+                dp2[j] =  Math.min(dp2[j-1],Math.min(dp1[j],dp1[j-1]))+1;
+               }
 
                     }
+                    dp1 = dp2.clone();
         }
-        return dp[n][m];
+        return dp1[m];
 
 
 
