@@ -12,7 +12,7 @@ class Solution {
         
         }
         else if(p.charAt(j)=='*'){
-            dp[i][j] = (help(i-1,j-1,s,p,dp)|help(i-1,j,s,p,dp)|help(i,j-1,s,p,dp))?1:0;
+            dp[i][j] = (help(i-1,j,s,p,dp)|help(i,j-1,s,p,dp))?1:0;
             
         }
         else{
