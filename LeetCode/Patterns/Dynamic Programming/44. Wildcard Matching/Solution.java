@@ -9,7 +9,7 @@ class Solution {
         if(s.charAt(i) == p.charAt(j)||p.charAt(j)=='?')
         return help(i-1,j-1,s,p);
         if(p.charAt(j)=='*'){
-            return help(i-1,j-1,s,p)|help(i-1,j,s,p);
+            return help(i-1,j-1,s,p)|help(i-1,j,s,p)|help(i,j-1,s,p);
         }
         return false;
     }
