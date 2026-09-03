@@ -5,17 +5,20 @@ class Solution {
         if(i<0&&p.charAt(j)=='*')
         return help(i,j-1,s,p,dp);
         else if(i<0) return false;
-        if(dp[i][j]!=-1) return dp[i][j]==0?false:true;
+        if(dp[i][j]!=-1) return dp[i][j]==1;
 
         if(s.charAt(i) == p.charAt(j)||p.charAt(j)=='?'){
         dp[i][j] = help(i-1,j-1,s,p,dp)?1:0;
-        return dp[i][j]==0?false:true;
+        
         }
-        if(p.charAt(j)=='*'){
+        else if(p.charAt(j)=='*'){
             dp[i][j] = (help(i-1,j-1,s,p,dp)|help(i-1,j,s,p,dp)|help(i,j-1,s,p,dp))?1:0;
-             return dp[i][j]==0?false:true;
+            
         }
-        return false;
+        else{
+            dp[i][j] = 0;
+            }
+            return dp[i][j]==1;
     }
     public boolean isMatch(String s, String p) {
         int m = s.length();
