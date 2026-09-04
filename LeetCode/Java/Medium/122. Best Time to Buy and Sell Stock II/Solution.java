@@ -10,7 +10,7 @@ class Solution {
        int sell = 0;
        int skip = 0;
        //if hold any stock
-       if(cs!=-1&&prices[i]>cs)
+       if(cs!=-1&&prices[i]>=cs)
        sell =prices[i]-cs+ help(i+1,prices[i],prices,n,dp);
        
         return dp[i][cs+1] = Math.max(sell,skip);
