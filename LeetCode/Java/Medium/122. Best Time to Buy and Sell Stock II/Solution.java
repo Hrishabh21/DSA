@@ -2,7 +2,7 @@ class Solution {
     public int help(int i,int cs,int[] prices,int n){
         if(i == n) return 0;
         int buy = 0;
-        
+        if(cs==-1)
         buy =help(i+1,prices[i],prices,n);
        
        int sell = 0;
