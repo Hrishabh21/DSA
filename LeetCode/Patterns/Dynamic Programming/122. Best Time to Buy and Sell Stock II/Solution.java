@@ -1,12 +1,12 @@
 class Solution {
     public int help(int i,int cs,int[] prices,int n){
         if(i == n) return 0;
+        int buy = 0;
         
-   
-           int buy =help(i+1,prices[i],prices,n);
+        buy =help(i+1,prices[i],prices,n);
        
        int sell = 0;
-       if(cs!=-1)
+       if(cs!=-1&&prices[i]>cs)
         sell =prices[i]-cs+ help(i+1,-1,prices,n);
         
         int notSell = help(i+1,cs,prices,n);
