@@ -17,14 +17,21 @@ class Solution {
     }
     public int maxProfit(int[] prices) {
         int n = prices.length;
-        int sum = 0;
-        for(int p:prices){
-            sum+=p;
-        }
+       
        // int dp[][] = new int[n][sum+2];
         // for(int i[]:dp)
         // Arrays.fill(i,-1);
-        return help(0,-1,prices,n);
+       // return help(0,-1,prices,n);
+       int cs = prices[0];
+       int res = 0;
+       for(int i =1;i<n;i++){
+        if(prices[i]>=prices[i-1]){
+            res+=(prices[i]-prices[i-1]);
+            
+        }
+       }
+
+       return res;
         
     }
 }
