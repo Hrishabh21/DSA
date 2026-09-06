@@ -3,7 +3,7 @@
 Track your progress on the NeetCode 150 roadmap practice problems.
 
 ## Progress
-- **Completed:** 3 / 150 (2.0%)
+- **Completed:** 4 / 150 (2.7%)
 
 ---
 
@@ -140,7 +140,7 @@ Track your progress on the NeetCode 150 roadmap practice problems.
 ### 📂 2-D Dynamic Programming
 - [ ] Unique Paths
 - [ ] Longest Common Subsequence
-- [ ] Best Time to Buy and Sell Stock with Cooldown
+- [x] [Best Time to Buy and Sell Stock with Cooldown](./Java/Medium/309. Best Time to Buy and Sell Stock with Cooldown/)
 - [ ] Coin Change II
 - [ ] Target Sum
 - [ ] Interleaving String
