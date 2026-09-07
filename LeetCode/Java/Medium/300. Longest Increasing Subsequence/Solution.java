@@ -1,38 +1,36 @@
 class Solution {
-    public int lis(int i,int prev,int[]nums,int[][] dp){
-        if(i==nums.length) return 0;
-        if(dp[i][prev+1]!=-1)return dp[i][prev+1];
-        int tk = 0;
+
+    public int lb(int st,int end,int num,ArrayList<Integer> arr){
+       
+        if(st>=end) return st;
+        int m = st+((end-st)/2);
+       
         
-        if(prev==-1||nums[i]>nums[prev]){
-            tk =1+lis(i+1,i,nums,dp);
+        if(arr.get(m) <num){
+            return lb(m+1,end,num,arr);
+            }
+        else{
+             return lb(st,m,num,arr);
         }
         
-        return dp[i][prev+1]= Math.max(tk,lis(i+1,prev,nums,dp));
-
-
     }
-    public int lengthOfLIS(int[] nums) {   
-        int n = nums.length;
-        int[][] dp = new int[nums.length+1][nums.length+1];
-        
-        // for(int[] d:dp){Arrays.fill(d,-1);}
-        // return lis(0,-1,nums,dp);
 
-        for(int i = n-1;i>=0;i--){
-            for(int prev = -1;prev<n;prev++){
-                 int tk = 0;
-        
-        if(prev==-1||nums[i]>nums[prev]){
-            tk =1+dp[i+1][i+1];
-        }
-        
-         dp[i][prev+1]= Math.max(tk,dp[i+1][prev+1]);
+    public int lengthOfLIS(int[] nums) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(nums[0]);
 
+        for(int i = 1;i<nums.length;i++){
+            if(nums[i]>arr.getLast()){
+                arr.add(nums[i]);
+            }
+            else{
+                //lowerbound
+                int ind = lb(0,arr.size(),nums[i],arr);
+                arr.set(ind,nums[i]);
             }
         }
+        return arr.size();
 
-        return dp[0][0];
         
     }
 }
