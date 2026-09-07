@@ -1,16 +1,21 @@
 class Solution {
-    public int lis(int i,int prev,int[]nums){
+    public int lis(int i,int prev,int[]nums,int[][] dp){
         if(i==nums.length) return 0;
+        if(dp[i][prev+1]!=-1)return dp[i][prev];
         int tk = 0;
-        if(nums[i]>prev){
-            tk =1+lis(i+1,nums[i],nums);
+        
+        if(prev==-1||nums[i]>nums[prev]){
+            tk =1+lis(i+1,i,nums,dp);
         }
-        return Math.max(tk,lis(i+1,prev,nums));
+        
+        return dp[i][prev+1]= Math.max(tk,lis(i+1,prev,nums,dp));
 
 
     }
-    public int lengthOfLIS(int[] nums) {    
-       return lis(0,Integer.MIN_VALUE,nums);
+    public int lengthOfLIS(int[] nums) {   
+        int[][] dp = new int[nums.length][nums.length+1]; 
+        for(int[] d:dp){Arrays.fill(d,-1);}
+        return lis(0,-1,nums,dp);
         
     }
 }
