@@ -1,36 +1,21 @@
 class Solution {
-
-    public int lb(int st,int end,int num,ArrayList<Integer> arr){
-       
-        if(st>=end) return st;
-        int m = st+((end-st)/2);
-       
+    public int lis(int i,int prev,int[]nums,int[][] dp){
+        if(i==nums.length) return 0;
+        if(dp[i][prev+1]!=-1)return dp[i][prev+1];
+        int tk = 0;
         
-        if(arr.get(m) <num){
-            return lb(m+1,end,num,arr);
-            }
-        else{
-             return lb(st,m,num,arr);
+        if(prev==-1||nums[i]>nums[prev]){
+            tk =1+lis(i+1,i,nums,dp);
         }
         
+        return dp[i][prev+1]= Math.max(tk,lis(i+1,prev,nums,dp));
+
+
     }
-
-    public int lengthOfLIS(int[] nums) {
-        ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(nums[0]);
-
-        for(int i = 1;i<nums.length;i++){
-            if(nums[i]>arr.getLast()){
-                arr.add(nums[i]);
-            }
-            else{
-                //lowerbound
-                int ind = lb(0,arr.size(),nums[i],arr);
-                arr.set(ind,nums[i]);
-            }
-        }
-        return arr.size();
-
+    public int lengthOfLIS(int[] nums) {   
+        int[][] dp = new int[nums.length][nums.length+1]; 
+        for(int[] d:dp){Arrays.fill(d,-1);}
+        return lis(0,-1,nums,dp);
         
     }
 }
