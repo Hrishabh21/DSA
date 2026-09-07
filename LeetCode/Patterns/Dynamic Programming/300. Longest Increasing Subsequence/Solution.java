@@ -1,7 +1,7 @@
 class Solution {
     public int lis(int i,int prev,int[]nums,int[][] dp){
         if(i==nums.length) return 0;
-        if(dp[i][prev+1]!=-1)return dp[i][prev];
+        if(dp[i][prev+1]!=-1)return dp[i][prev+1];
         int tk = 0;
         
         if(prev==-1||nums[i]>nums[prev]){
