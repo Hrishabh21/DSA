@@ -4,7 +4,7 @@ class Solution {
        
         if(st>=end) return st;
         int m = st+((end-st)/2);
-       
+        //if(arr.get(m)==num) return m;
         
         if(arr.get(m) <num){
             return lb(m+1,end,num,arr);
@@ -25,7 +25,7 @@ class Solution {
             }
             else{
                 //lowerbound
-                int ind = lb(0,arr.size(),nums[i],arr);
+                int ind = lb(0,arr.size()-1,nums[i],arr);
                 arr.set(ind,nums[i]);
             }
         }
