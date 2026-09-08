@@ -11,11 +11,12 @@ class Solution {
 
                int ans = 0;
                int j=-1;
+               Arrays.sort(nums);
                for(int i = 0;i<n;i++){
                    for(int prev = 0;prev<i;prev++){
 
-                     if(nums[i]%nums[prev]==0||nums[prev]%nums[i]==0){
-                         if(dp[i]<dp[prev]+1)
+                     if(nums[i]%nums[prev]==0){
+                         if(dp[i]<=dp[prev]+1)
                          hs[i] = prev;
                            dp[i] = Math.max(dp[i],dp[prev]+1);
                        }       
