@@ -16,9 +16,9 @@ class Solution {
                    for(int prev = 0;prev<i;prev++){
 
                      if(nums[i]%nums[prev]==0){
-                         if(dp[i]<=dp[prev]+1)
+                         if(dp[i]<dp[prev]+1)
                          hs[i] = prev;
-                           dp[i] = Math.max(dp[i],dp[prev]+1);
+                         dp[i] = Math.max(dp[i],dp[prev]+1);
                        }       
 
                    }
