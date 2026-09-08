@@ -29,14 +29,14 @@ class Solution {
                ArrayList<Integer> arr = new ArrayList<>();
                ans--;
                while(ans>=0){
-                   arr.add(nums[j]);
+                   arr.add(0,nums[j]);
                    j = hs[j];
                    ans--;
                    
                }
              
 
-               Collections.reverse(arr);
+            //   Collections.reverse(arr);
                return arr;
         
     }
