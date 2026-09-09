@@ -7,7 +7,7 @@ class Solution {
         int cnt[] = new int[n];
         Arrays.fill(cnt,1);
         cnt[0] = 1;
-        int lis = 0;
+        int lis = 1;
         int ans = 1;
         for(int i = 1;i<n;i++){
             for(int j = 0;j<i;j++){
@@ -25,12 +25,12 @@ class Solution {
                 lis = dp[i];
                 ans = cnt[i];
             }
-            if(lis==dp[i]){
+            else if(lis==dp[i]){
                 ans+=cnt[i];
             }
         }
 
-        return cnt[7];
+        return ans;
 
     }
 }

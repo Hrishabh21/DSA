@@ -8,7 +8,7 @@
 Array, Dynamic Programming, Binary Indexed Tree, Segment Tree, Longest Increasing Subsequence
 
 ### 🚀 Performance
-- **Runtime:** Successfully Evaluated
+- **Runtime:** N/A
 - **Memory:** N/A
 
 ---
