@@ -8,8 +8,8 @@
 Array, Dynamic Programming, Binary Indexed Tree, Segment Tree, Longest Increasing Subsequence
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 24 ms
+- **Memory:** 45.6 MB
 
 ---
 
