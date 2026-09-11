@@ -1,12 +1,12 @@
 class Solution {
-    public int helper(int[] cuts,int st,int end,int n,int[][] dp){
-        if(st>=end) return 0;
+    public int helper(int[] cuts,int st,int end,int[][] dp){
+        if(st+1==end) return 0;
         if(dp[st][end]!=-1) return dp[st][end];
-        int j = st==0?0:cuts[st-1];
+       
     
         int ans = Integer.MAX_VALUE;
-        for(int i = st;i<end;i++){
-        int cut = (n-j)+helper(cuts,st,i,cuts[i],dp)+helper(cuts,i+1,end,n,dp);
+        for(int i = st+1;i<end;i++){
+        int cut = (cuts[end]-cuts[st])+helper(cuts,st,i,dp)+helper(cuts,i,end,dp);
         ans = Math.min(ans,cut);
 
        }
@@ -15,11 +15,18 @@ class Solution {
     public int minCost(int n, int[] cuts) {
        
         Arrays.sort(cuts);
-        int[][] dp = new int[cuts.length+1][cuts.length+1];
+        int[][] dp = new int[cuts.length+2][cuts.length+2];
         for(int[]d:dp)
         Arrays.fill(d,-1);
+        int arr[] = new int[cuts.length+2];
+        for(int i = 0;i<cuts.length;i++){
+            arr[i+1] =cuts[i];
+        }
+        arr[0] =0;
+        arr[cuts.length+1] = n;
+
        
-        return helper(cuts,0,cuts.length,n,dp);
+        return helper(arr,0,cuts.length+1,dp);
         
     }
 }
