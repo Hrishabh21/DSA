@@ -8,8 +8,8 @@
 Array, Dynamic Programming, Sorting
 
 ### 🚀 Performance
-- **Runtime:** 28 ms
-- **Memory:** 44.3 MB
+- **Runtime:** 12 ms
+- **Memory:** 44.5 MB
 
 ---
 
