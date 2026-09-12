@@ -5,21 +5,12 @@ class Solution {
         
         if(pal[i][j-1]) return dp[i][j]=0;
       
-        int ans = Integer.MAX_VALUE;
+        int c = Integer.MAX_VALUE;
         for(int k =i+1;k<j;k++){
-             if (pal[i][k-1]) {
-
-                // s[i...k] is one palindrome
-                // Make one cut after it and solve remaining suffix
-                ans = Math.min(
-                    ans,
-                    1 + mc(s, k,j, dp, pal)
-                );
+            c =Math.min(c,mc(s,i,k,dp,pal)+mc(s,k,j,dp,pal));
         }
-       
+        return dp[i][j] = c+1;
 
-        }
-         return dp[i][j] = ans;
     }
     public int minCut(String s) {
         int n = s.length();
