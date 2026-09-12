@@ -35,6 +35,6 @@ class Solution {
             st.push(c);
             i++;
         }
-        return st2.pop();
+        return st2.s;
     }
 }
