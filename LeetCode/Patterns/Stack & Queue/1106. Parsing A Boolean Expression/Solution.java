@@ -1,7 +1,7 @@
 class Solution {
     public boolean parseBoolExpr(String exp) {
         Stack<Character> st  = new Stack<>();
-         Stack<Boolean> st2  = new Stack<>();
+       
         int i = 0;
         int n = exp.length();
         while(i<n){
@@ -12,22 +12,26 @@ class Solution {
             }
             char c = exp.charAt(i);
             if(c ==')'){
+                boolean hasTrue = false;
+                boolean hasFalse = false;
                 while(st.peek()!='('){
-                    st2.add((st.pop()=='t'));
+                    if(st.pop()=='t')
+                    hasTrue = true;
+                    else
+                    hasFalse = true;    
 
                 }
                 st.pop();
                 char ex = st.pop();
-                while(st2.size()>1){
-                    if(ex=='&'){
-                        st2.push(st2.pop()&st2.pop());
-                    }
-                    else{
-                        st2.push(st2.pop()|st2.pop());
-                    }
+                if(ex =='&'){
+                    st.push(hasFalse?'f':'t');
                 }
-                if(ex=='!')
-                st2.push(!st2.pop());
+                else if(ex=='|'){
+                    st.push(hasTrue?'t':'f');
+                }
+                else{
+                    st.push(hasFalse?'t':'f');
+                }
                 i++;
                 continue;
 
@@ -36,6 +40,6 @@ class Solution {
             st.push(c);
             i++;
         }
-        return st2.size()==0?(st.pop()=='t'):st2.pop();
+        return st.pop()=='t';
     }
 }
