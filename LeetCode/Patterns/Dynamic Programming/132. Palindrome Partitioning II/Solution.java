@@ -12,7 +12,7 @@ class Solution {
     }
     public int mc(String s,int i,int j){
         if(isPalin(s.substring(i,j))) return 0;
-        int c = 0;
+        int c = Integer.MAX_VALUE;
         for(int k =i+1;k<j;k++){
             c =Math.min(c,mc(s,i,k)+mc(s,k,j));
         }
