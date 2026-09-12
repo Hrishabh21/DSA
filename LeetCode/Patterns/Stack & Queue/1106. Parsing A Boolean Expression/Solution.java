@@ -32,6 +32,7 @@ class Solution {
                 continue;
 
             }
+            if(c!=',')
             st.push(c);
             i++;
         }
