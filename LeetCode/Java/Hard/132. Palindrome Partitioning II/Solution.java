@@ -20,6 +20,11 @@ class Solution {
 
     }
     public int minCut(String s) {
+
+
+
+
+        
         return mc(s,0,s.length());
     }
 }
