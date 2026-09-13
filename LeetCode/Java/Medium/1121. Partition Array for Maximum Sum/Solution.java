@@ -13,9 +13,22 @@ class Solution {
     }
     public int maxSumAfterPartitioning(int[] arr, int k) {
         int n = arr.length;
-        int dp[] = new int[n];
-        Arrays.fill(dp,-1);
-        return help(0,arr,k,dp);
+        int dp[] = new int[n+1];
+        //Arrays.fill(dp,-1);
+        for(int i = n-1;i>=0;i--){
+            int max = arr[i];
+            int ans = Integer.MIN_VALUE;
+            for(int l = i;(l<n)&&(l<i+k);l++){
+                max = Math.max(arr[l],max);
+                ans = Math.max(ans,max*(l-(i-1))+dp[l+1]);
+            }
+            dp[i] = ans;
+
+        }
+
+
+        return dp[0];
+        //return help(0,arr,k,dp);
 
         
     }
