@@ -4,8 +4,7 @@ class Solution {
         Stack<Integer> st = new Stack<>();
         int n = heights.length;
         int[] nse = new int[n];
-        nse[n-1] = n;
-        st.push(n-1);
+      
         for(int i=n-1;i>=0;i--){
             while(!st.isEmpty()&&heights[i]<=heights[st.peek()]){
                 st.pop();
@@ -19,7 +18,7 @@ class Solution {
             st.push(i);
         }
         st.clear();
-        int ans = 0,pse=-1;
+        int ans = 0,pse;
         for(int i = 0;i<n;i++){
              while(!st.isEmpty()&&heights[i]<=heights[st.peek()]){
                 st.pop();
