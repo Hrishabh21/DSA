@@ -1,40 +1,22 @@
 class Solution {
 
-     public int LRA(int[] heights) {
+      public int LRA(int[] bar){
+        int n = bar.length;
         Stack<Integer> st = new Stack<>();
-        int n = heights.length;
-        int[] nse = new int[n];
-      
-        for(int i=n-1;i>=0;i--){
-            while(!st.isEmpty()&&heights[i]<=heights[st.peek()]){
-                st.pop();
-            }
-            if(st.isEmpty()){
-                nse[i] = n;
-            }
-            else{
-                nse[i] = st.peek();
-            }
-            st.push(i);
-        }
-        st.clear();
-        int ans = 0,pse;
+        st.push(-1);
+        int ans = 0;
         for(int i = 0;i<n;i++){
-             while(!st.isEmpty()&&heights[i]<=heights[st.peek()]){
-                st.pop();
-            }
-            if(st.isEmpty()){
-                pse = -1;
-            }
-            else{
-                pse = st.peek();
+            while(st.size()>1&&bar[st.peek()]>=bar[i]){
+                int temp = bar[st.pop()]*(i - st.peek()-1);
+                ans = Math.max(ans,temp);
             }
             st.push(i);
-            int temp = heights[i]*(nse[i]-pse-1);
-            ans = Math.max(temp,ans);
         }
+         while(st.size()>1){
+                int temp = bar[st.pop()]*(n - st.peek()-1);
+                ans = Math.max(ans,temp);
+            }
         return ans;
-
 
     }
 
