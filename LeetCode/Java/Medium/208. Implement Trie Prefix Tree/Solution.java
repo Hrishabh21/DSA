@@ -1,12 +1,13 @@
-class Trie {
-    class TrieNode{
+class TrieNode{
         TrieNode[] child;
         boolean eow;
-        private TrieNode(){
+        public TrieNode(){
             child = new TrieNode[26];
             eow = false;
         }
     }
+class Trie {
+    
     private TrieNode root;
     public Trie() {
         root = new TrieNode();
