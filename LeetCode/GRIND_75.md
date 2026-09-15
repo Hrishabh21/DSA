@@ -3,7 +3,7 @@
 Track your progress on the Grind 75 coding interview preparation list.
 
 ## Progress
-- **Completed:** 7 / 75 (9.3%)
+- **Completed:** 8 / 75 (10.7%)
 
 ---
 
@@ -96,7 +96,7 @@ Track your progress on the Grind 75 coding interview preparation list.
 - [ ] Validate Binary Search Tree
 - [ ] Kth Smallest Element in a BST
 - [ ] Lowest Common Ancestor of a Binary Search Tree
-- [ ] Implement Trie (Prefix Tree)
+- [x] [Implement Trie (Prefix Tree)](./Java/Medium/208. Implement Trie Prefix Tree/)
 - [ ] Design Add and Search Words Data Structure
 - [ ] Word Search II
 

@@ -3,7 +3,7 @@
 Track your progress on the NeetCode 150 roadmap practice problems.
 
 ## Progress
-- **Completed:** 7 / 150 (4.7%)
+- **Completed:** 8 / 150 (5.3%)
 
 ---
 
@@ -84,7 +84,7 @@ Track your progress on the NeetCode 150 roadmap practice problems.
 - [ ] Serialize and Deserialize Binary Tree
 
 ### 📂 Tries
-- [ ] Implement Trie (Prefix Tree)
+- [x] [Implement Trie (Prefix Tree)](./Java/Medium/208. Implement Trie Prefix Tree/)
 - [ ] Design Add and Search Words Data Structure
 - [ ] Word Search II
 
