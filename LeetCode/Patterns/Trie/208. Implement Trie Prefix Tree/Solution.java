@@ -2,7 +2,7 @@ class Trie {
     class TrieNode{
         TrieNode[] child;
         boolean eow;
-        public TrieNode(){
+        private TrieNode(){
             child = new TrieNode[26];
             eow = false;
         }
