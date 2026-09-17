@@ -64,7 +64,7 @@ class Solution {
         Arrays.sort(nums);
         for(int i:nums){
 
-            (qno<q&&(i>quer[qno][1])){
+            while(qno<q&&(i>quer[qno][1])){
                 ans[quer[qno][2]] = trie.getMax(quer[qno][0]);
                 qno++;
             }
