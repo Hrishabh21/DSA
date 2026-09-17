@@ -8,8 +8,8 @@
 Array, Hash Table, Bit Manipulation, Trie
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 866 ms
+- **Memory:** 208.6 MB
 
 ---
 
