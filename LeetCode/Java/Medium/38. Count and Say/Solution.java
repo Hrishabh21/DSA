@@ -18,7 +18,7 @@ class Solution {
             }
 
         }
-        res+=(String.valueOf(cnt)+s.charAt(0));
+        res+=(String.valueOf(cnt)+s.charAt(s.length()-1));
 
 
         return res;
