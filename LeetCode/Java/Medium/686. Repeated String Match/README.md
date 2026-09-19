@@ -8,8 +8,8 @@
 String, String Matching, Z Algorithm, Knuth–Morris–Pratt Algorithm, Boyer–Moore String-Search Algorithm
 
 ### 🚀 Performance
-- **Runtime:** 259 ms
-- **Memory:** 43.4 MB
+- **Runtime:** N/A
+- **Memory:** N/A
 
 ---
 
