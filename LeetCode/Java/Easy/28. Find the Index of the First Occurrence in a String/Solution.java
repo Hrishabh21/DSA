@@ -1,26 +1,35 @@
 class Solution {
-    public int strStr(String haystack, String needle) {
-        //if needle is empty return 0
-        if (needle == ""){
-            return 0;
-        }
-        int hLen = haystack.length();
-        int nLen = needle.length();
-        //iterate through haystack to find first occurrence of needle
-        for (int i = 0; i <= hLen - nLen; i++) {
-            int j;
-            //check character by character for a match
-            for (j = 0; j < nLen; j++) {
-                if (haystack.charAt(i + j) != needle.charAt(j)) {
-                    break;//if mismatch break and check next position
-                }
+    public int strStr(String txt, String ptrn) {
+        int n = txt.length(),m=ptrn.length();
+        int[] lps = new int[m];
+        int i = 0;
+        int j = 1;
+        lps[0] = 0;
+        while(j<m){
+            if(ptrn.charAt(i) == ptrn.charAt(j)){
+                lps[j]=1+lps[j-1];
+                i++;
             }
-            //if entire needle matches return index
-            if (j == nLen) {
-                return i;
+            else{
+                lps[j] = 0;
+                i =0;
+            }
+            j++;
+        }
+        j = 0;
+        for(i = 0;i<n;i++){
+            if(txt.charAt(i) == ptrn.charAt(j)){
+                j++;
+            }
+            else{
+                j = lps[j];
+            }
+            if(j==m){
+                return i-m+1;
             }
         }
-        //if no match is found return -1
         return -1;
+
+        
     }
 }
