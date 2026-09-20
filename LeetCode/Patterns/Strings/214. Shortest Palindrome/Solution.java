@@ -3,6 +3,7 @@ class Solution {
         String rev = new StringBuilder(s).reverse().toString();
 
         int n = s.length();
+        if(n==0) return "";
         int[] lps = new int[n];
         int i = 0;
         int j = 1;
