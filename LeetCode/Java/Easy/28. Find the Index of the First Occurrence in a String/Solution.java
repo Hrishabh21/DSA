@@ -20,32 +20,28 @@ class Solution {
                 j++;
                }
             }
-             System.out.println(lps[j-1]+"");
-            //j++;
+            
            
         }
         j = 0;
-        for(i = 0;i<n;i++){
+        i =0;
+        while(i<n){
             if(txt.charAt(i) == ptrn.charAt(j)){
                 j++;
+                i++;
+                if(j==m) return i-m;
+               
             }
             else{
-                while(txt.charAt(i) != ptrn.charAt(j)){
+                
                 if(j!=0)
                 j = lps[j-1];
-                else{
-                    j=-1;
-                    break;
-                    }
-                }
+                else
+                i++;
                
-                j++;
             
             }
-            if(j==m){
-                System.out.println("reached");
-                return i-m+1;
-            }
+           
         }
         return -1;
 
