@@ -8,8 +8,8 @@
 String, Rolling Hash, String Matching, Hash Function, Manacher, Z Algorithm, Knuth–Morris–Pratt Algorithm
 
 ### 🚀 Performance
-- **Runtime:** 7 ms
-- **Memory:** 46.9 MB
+- **Runtime:** N/A
+- **Memory:** N/A
 
 ---
 

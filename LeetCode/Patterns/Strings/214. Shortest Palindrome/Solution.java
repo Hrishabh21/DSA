@@ -1,54 +1,27 @@
 class Solution {
     public String shortestPalindrome(String s) {
+        if (s.length() <= 1) return s;
+
         String rev = new StringBuilder(s).reverse().toString();
+        String combined = s + "#" + rev;
 
-        int n = s.length();
-        if(n==0) return "";
-        int[] lps = new int[n];
-        int i = 0;
-        int j = 1;
-        lps[0] = 0;
-        while(j<n){
-            if(s.charAt(i) == s.charAt(j)){
-                lps[j]=1+i;
-                i++;
+        int[] lps = new int[combined.length()];
+
+        for (int i = 1, j = 0; i < combined.length(); i++) {
+            while (j > 0 && combined.charAt(i) != combined.charAt(j)) {
+                j = lps[j - 1];
+            }
+
+            if (combined.charAt(i) == combined.charAt(j)) {
                 j++;
             }
-            else{
-               if(i!=0){
-                i = lps[i-1];
-               }
-               else{
-                lps[j] = 0;
-                j++;
-               }
-            }     
+
+            lps[i] = j;
         }
-        j = 0;
-        i =0;
-        while(i<n){
-            if(rev.charAt(i) == s.charAt(j)){
-                j++;
-                i++;
-                //if(j==n) return i-n+1;
 
-               
-               
-            }
-            else{
-                
-                if(j!=0)
-                j = lps[j-1];
-                else
-                i++;
-               
-            
-            }
-           
-        }
-        System.out.println(j);
-        return rev.substring(0,n-j)+s;
+        int palindromeLength = lps[combined.length() - 1];
 
+        return rev.substring(0, s.length() - palindromeLength) + s;
 
     }
 
