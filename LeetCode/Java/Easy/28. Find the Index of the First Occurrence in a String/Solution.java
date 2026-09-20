@@ -28,8 +28,10 @@ class Solution {
         while(i<n){
             if(txt.charAt(i) == ptrn.charAt(j)){
                 j++;
+              
+                if(j==m) return i-m+1;
+
                 i++;
-                if(j==m) return i-m;
                
             }
             else{
